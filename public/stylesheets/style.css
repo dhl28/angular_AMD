@@ -1,0 +1,54 @@
+html{
+  height: 100%;
+}
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height:100%;
+}
+
+a {
+  color: #00B7FF;
+}
+.header .navbar{
+  margin-bottom: 10px;
+}
+.container-opt{
+  height: 80%;
+  height: calc(100% - 62px - 60px);
+  min-height: 300px;
+}
+.sidebar{
+  float: left;
+  height: 100%;
+  width: 200px;
+  background: #62D0AD;
+}
+.mainBoard{
+  float: left;
+  width: 80%;
+  width: calc(100% - 200px);
+  background: #e7e7e7;
+  height: 100%;
+}
+.footer{
+  background-color: #39383e;
+  height: 60px;
+}
+.footer .container{
+  text-align: center;
+  line-height: 27px;
+  color: white;
+  position: relative;
+  top: 15px;
+}
+.copy-right{
+  margin: 0 5px;
+}
+.footer .glyphicon{
+  top:2px;
+}
+.content{
+  background: url("/public/images/bg_dm.jpg") center no-repeat;
+  height: 100%;
+  background-size: cover;
+}
