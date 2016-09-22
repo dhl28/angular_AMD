@@ -48,7 +48,10 @@ a {
   top:2px;
 }
 .content{
-  background: url("/public/images/bg_dm.jpg") center no-repeat;
+  background-color: ghostwhite;
   height: 100%;
   background-size: cover;
+}
+.pointer{
+  cursor: pointer;
 }

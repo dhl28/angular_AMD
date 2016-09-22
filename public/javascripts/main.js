@@ -10,28 +10,39 @@ requirejs.config({
     //never includes a ".js" extension since
     //the paths config could be for a directory.
     paths: {
+        'app':'/public/javascripts/webApp',
         'jquery': '/bower_components/jquery/dist/jquery.min',
-        'angular': '/bower_components/angular/angular'
+        'angular': '/bower_components/angular/angular',
+        'uiRouter': '/bower_components/angular-ui-router/release/angular-ui-router',
+        'angularAMD': '/bower_components/angularAMD/angularAMD'
     },
     shim: {
-
-        'angular':{
+        'angular': {
             exports: 'angular'
         },
-        'underscore':{
+        'uiRouter': {
+            deps: ['angular']
+        },
+        'angularAMD': ['angular'],
+        'underscore': {
             exports: '_'
         },
     }
 });
-
-// Start the main app logic.
-requirejs(['jquery', 'angular'],
-    function ($, angular) {
-        //jQuery, canvas and the app/sub module are all
-        //loaded and can be used here now.
-        var app = angular.module('myApp', []);
-        app.controller('MainCtrl', function($scope) {
-            $scope.firstName= "John";
-            $scope.lastName= "Doe";
+//require(['jquery','angular','uiRouter'],function(){
+//    intiApp();
+//});
+intiApp();
+function intiApp(){
+    require(['/public/javascripts/routes.js'], function (app) {
+        app.controller('MainCtrl', function ($scope,$state) {
+            $scope.firstName = "John";
+            $scope.lastName = "Doe";
+            $scope.view1 = function(){
+                console.log('hello')
+                $state.go('home.view1');
+            }
         });
-    });
+    })
+}
+

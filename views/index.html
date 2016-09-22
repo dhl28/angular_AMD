@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="public/stylesheets/animation.css">
     <!-- endbuild -->
 </head>
-<body ng-app="myApp">
+<body>
 <!--[if lte IE 8]>
 <p class="browsehappy">您正在使用 <strong>低版本</strong> 浏览器. 请 <a href="http://browsehappy.com/">升级浏览器</a> 提升用户体验.</p>
 <![endif]-->
@@ -59,7 +59,8 @@
     <div class="sidebar">
         <div sider-bar></div>
     </div>
-    <div class="mainBoard" ng-include="'/views/main.html'" ng-controller="MainCtrl"></div>
+    <div data-ui-view=""></div>
+    <!--<div class="mainBoard" ng-include="'/public/html/layout/main.html'" ng-controller="MainCtrl"></div>-->
 </div>
 <div class="clearfix"></div>
 <div class="footer">
@@ -68,7 +69,7 @@
     </div>
 </div>
 
-<div class="myAnimate"></div>
+<!--<div class="myAnimate"></div>-->
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 <script>
     !function (A, n, g, u, l, a, r) {

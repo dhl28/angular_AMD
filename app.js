@@ -25,6 +25,10 @@ app.use('/public',express.static(path.join(__dirname, 'public')));
 app.use('/bower_components',express.static(path.join(__dirname, 'bower_components')));
 app.use('/views',express.static(path.join(__dirname, 'views')));
 
+app.use(function(req, res) {
+  // Use res.sendfile, as it streams instead of reading the file into memory.
+  res.sendfile(__dirname + '/views/index.html');
+});
 app.use('/', routes);
 app.use('/users', users);
 
