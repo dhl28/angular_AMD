@@ -12,6 +12,7 @@ requirejs.config({
     paths: {
         'app':'/public/javascripts/webApp',
         'jquery': '/bower_components/jquery/dist/jquery.min',
+        'lodash': '/bower_components/lodash/dist/lodash',
         'angular': '/bower_components/angular/angular',
         'uiRouter': '/bower_components/angular-ui-router/release/angular-ui-router',
         'angularAMD': '/bower_components/angularAMD/angularAMD'
@@ -24,7 +25,7 @@ requirejs.config({
             deps: ['angular']
         },
         'angularAMD': ['angular'],
-        'underscore': {
+        'lodash': {
             exports: '_'
         },
     }

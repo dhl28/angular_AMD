@@ -1,7 +1,7 @@
 /**
  * Created by dhl on 2016/9/22.
  */
-define(['jquery','angular','angularAMD','uiRouter'], function ($,angular,angularAMD) {
+define(['jquery','angular','angularAMD','uiRouter','lodash'], function ($,angular,angularAMD) {
     'use strict';
     //angular.element(document).ready(function() {
     //    angular.bootstrap(document, ['myApp']);
