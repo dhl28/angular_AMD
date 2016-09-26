@@ -17,7 +17,7 @@ a {
 }
 .container-opt{
   height: 80%;
-  height: calc(100% - 52px - 60px);
+  height: calc(100% - 52px - 33px);
   min-height: 300px;
 }
 .sidebar{
@@ -37,14 +37,15 @@ a {
 }
 .footer{
   background-color: #39383e;
-  height: 60px;
+  /*height: 60px;*/
+  padding: 8px 20px 5px 20px;
+  font-size: 12px;
+  height: 33px;
 }
 .footer .container{
   text-align: center;
   line-height: 27px;
   color: white;
-  position: relative;
-  top: 15px;
 }
 .copy-right{
   margin: 0 5px;
