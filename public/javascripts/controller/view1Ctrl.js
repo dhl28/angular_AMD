@@ -10,5 +10,5 @@ define(['app'], function (app) {
             console.log('hello view1');
         }
     }
-  return view1Ctrl;
+    app.register.controller('view1Ctrl', view1Ctrl);
 });
