@@ -11,7 +11,6 @@ define(['angularAMD'], function (angularAMD) {
             templateUrl:'/public/javascripts/directive/tpl/header.html',
             scope: {},
             link: function (scope, element, attrs, controller) {
-                console.log('header init')
                 Layout.init();
             }
         };

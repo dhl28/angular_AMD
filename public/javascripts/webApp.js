@@ -1,13 +1,13 @@
 /**
  * Created by dhl on 2016/9/22.
  */
-define(['angular','angularAMD','uiRouter','lodash',
+define(['angularAMD','uiRouter','lodash',
     '/public/javascripts/directive/app.directive.js',
     '/public/javascripts/directive/header.directive.js',
     '/public/javascripts/directive/footer.directive.js',
     '/public/javascripts/directive/quickSidebar.directive.js',
     '/public/javascripts/directive/themePanel.directive.js',
-    '/public/javascripts/directive/sidebar.directive.js'], function (angular,angularAMD) {
+    '/public/javascripts/directive/sidebar.directive.js'], function (angularAMD) {
     'use strict';
     //angular.element(document).ready(function() {
     //    angular.bootstrap(document, ['myApp']);
@@ -50,7 +50,6 @@ define(['angular','angularAMD','uiRouter','lodash',
             .state('home.view1', angularAMD.route({
                 url: '^/view1',
                 templateUrl: '/public/html/view1.html',
-                controller: 'view1Ctrl',
                 controllerUrl: '/public/javascripts/controller/view1Ctrl.js'
                 //controller: 'MainCtrl',
                 //controllerUrl: '/public/javascripts/view1Ctrl.js'

@@ -23,7 +23,10 @@ requirejs.config({
         'uiRouter': {
             deps: ['angular']
         },
-        'angularAMD': ['angular'],
+        'angularAMD': {
+            deps: ['angular'],
+            exports: 'angularAMD'
+        },
         'lodash': {
             exports: '_'
         },
@@ -31,6 +34,3 @@ requirejs.config({
     // kick start application
     deps: ['webApp']
 });
-//require(['jquery','angular','uiRouter'],function(){
-//    intiApp();
-//});
