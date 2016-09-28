@@ -9,7 +9,6 @@ define(['angularAMD'], function (angularAMD) {
             restrict: 'AE',
             // which markup this directive generates
             templateUrl:'/public/js/directive/tpl/sidebar.html',
-            scope: {},
             link: function (scope, element, attrs, controller) {
                 Layout.initSidebar(); // init sidebar
             }

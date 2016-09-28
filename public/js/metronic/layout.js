@@ -50,6 +50,7 @@ var Layout = function () {
 
     // Handle sidebar menu links
     var handleSidebarMenuActiveLink = function(mode, el) {
+        return;
         var url = location.hash.toLowerCase();    
 
         var menu = $('.page-sidebar-menu');

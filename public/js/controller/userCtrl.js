@@ -3,9 +3,8 @@
  */
 // Controller_Other.js
 define(['webApp'], function (webApp) {
-    var view1Ctrl =  function ($scope) {
+    var userCtrl =  function ($scope) {
         $scope.title = "from other";
-        console.log('viewCtrl');
         $scope.sayHello = function(){
             alert('hello world');
         }
@@ -98,5 +97,5 @@ define(['webApp'], function (webApp) {
         }
 
     }
-    return view1Ctrl;
+    return userCtrl;
 });

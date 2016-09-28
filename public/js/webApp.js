@@ -62,13 +62,25 @@ define(['angularAMD','uiRouter','lodash',
                 templateUrl: '/public/html/user/user.html',
                 controllerUrl: '/public/js/controller/userCtrl.js'
             }))
+            .state('home.setting', angularAMD.route({
+                url: '^/setting',
+                templateUrl: '/public/html/setting/setting.html',
+                controllerUrl: '/public/js/controller/settingCtrl.js'
+            }))
+            .state('home.application', angularAMD.route({
+                url: '^/application',
+                templateUrl: '/public/html/application/application.html',
+                controllerUrl: '/public/js/controller/applicationCtrl.js'
+            }))
 
 
     })
     //ui-router redirect
     myApp.run(['$rootScope', '$state', function($rootScope, $state) {
+        $rootScope.$state = $state;
         var settings = {
-            hideThemePanel:true,
+            hideSidebarSearch:true,//hide sidebar search box
+            hideThemePanel:true,//hide theme config button
             layout: {
                 pageSidebarClosed: false, // sidebar menu state
                 pageBodySolid: false, // solid body color state
