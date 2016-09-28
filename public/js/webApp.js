@@ -16,23 +16,23 @@ define(['angularAMD','uiRouter','lodash',
     //});
     var myApp = angular.module('myApp', ['ui.router']);
 
-    myApp.factory('settings', ['$rootScope', function($rootScope) {
-        // supported languages
-        var settings = {
-            hideThemePanel:true,
-            layout: {
-                pageSidebarClosed: false, // sidebar menu state
-                pageBodySolid: false, // solid body color state
-                pageAutoScrollOnLoad: 1000 // auto scroll to top on page load
-            },
-            layoutImgPath: Metronic.getAssetsPath() + 'admin/layout/img/',
-            layoutCssPath: Metronic.getAssetsPath() + 'admin/layout/css/'
-        };
-
-        $rootScope.settings = settings;
-
-        return settings;
-    }]);
+    //myApp.factory('settings', ['$rootScope', function($rootScope) {
+    //    // supported languages
+    //    var settings = {
+    //        hideThemePanel:true,
+    //        layout: {
+    //            pageSidebarClosed: false, // sidebar menu state
+    //            pageBodySolid: false, // solid body color state
+    //            pageAutoScrollOnLoad: 1000 // auto scroll to top on page load
+    //        },
+    //        layoutImgPath: Metronic.getAssetsPath() + 'admin/layout/img/',
+    //        layoutCssPath: Metronic.getAssetsPath() + 'admin/layout/css/'
+    //    };
+    //
+    //    $rootScope.settings = settings;
+    //
+    //    return settings;
+    //}]);
 
     myApp.config(function ($locationProvider, $stateProvider,$urlRouterProvider) {
         $locationProvider.html5Mode({
@@ -67,6 +67,19 @@ define(['angularAMD','uiRouter','lodash',
     })
     //ui-router redirect
     myApp.run(['$rootScope', '$state', function($rootScope, $state) {
+        var settings = {
+            hideThemePanel:true,
+            layout: {
+                pageSidebarClosed: false, // sidebar menu state
+                pageBodySolid: false, // solid body color state
+                pageAutoScrollOnLoad: 1000 // auto scroll to top on page load
+            },
+            layoutImgPath: Metronic.getAssetsPath() + 'admin/layout/img/',
+            layoutCssPath: Metronic.getAssetsPath() + 'admin/layout/css/'
+        };
+
+        $rootScope.settings = settings;
+
         $rootScope.$on('$stateChangeStart', function(evt, to, params) {
             if (to.redirectTo) {
                 evt.preventDefault();
