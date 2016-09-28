@@ -11,7 +11,7 @@ define(['angularAMD'], function (angularAMD) {
             templateUrl:'/public/javascripts/directive/tpl/sidebar.html',
             scope: {},
             link: function (scope, element, attrs, controller) {
-                Layout.initSidebar();
+                Layout.initSidebar(); // init sidebar
             }
         };
     }])

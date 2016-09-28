@@ -64,6 +64,10 @@ define(['angularAMD','uiRouter','lodash',
             console.log('hello')
             $state.go('home.view1');
         }
+        $scope.$on('$viewContentLoaded', function() {
+            Metronic.init(); // Run metronic theme
+            Metronic.setAssetsPath('../../../assets/'); // Set the assets folder path
+        })
     });
     angularAMD.bootstrap(myApp);
 
