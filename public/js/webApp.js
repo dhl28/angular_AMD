@@ -7,7 +7,9 @@ define(['angularAMD','uiRouter','lodash',
     '/public/js/directive/footer.directive.js',
     '/public/js/directive/quickSidebar.directive.js',
     '/public/js/directive/themePanel.directive.js',
-    '/public/js/directive/sidebar.directive.js'], function (angularAMD) {
+    '/public/js/directive/sidebar.directive.js',
+    '/public/js/directive/component/bsTable.directive.js',
+], function (angularAMD) {
     'use strict';
     //angular.element(document).ready(function() {
     //    angular.bootstrap(document, ['myApp']);
@@ -17,6 +19,7 @@ define(['angularAMD','uiRouter','lodash',
     myApp.factory('settings', ['$rootScope', function($rootScope) {
         // supported languages
         var settings = {
+            hideThemePanel:true,
             layout: {
                 pageSidebarClosed: false, // sidebar menu state
                 pageBodySolid: false, // solid body color state
@@ -39,18 +42,13 @@ define(['angularAMD','uiRouter','lodash',
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: '/public/html/layout/main.html',
+                templateUrl: '/public/html/dashboard.html',
                 controller: 'MainCtrl'
             })
-            //.state('home.view1', {
-            //    url: '^/view1',
-            //    templateUrl: '/public/html/view1.html',
-            //    controller:'view1Ctrl'
-            //})
-            .state('home.view1', angularAMD.route({
-                url: '^/view1',
-                templateUrl: '/public/html/view1.html',
-                controllerUrl: '/public/js/controller/view1Ctrl.js'
+            .state('home.user', angularAMD.route({
+                url: '^/user',
+                templateUrl: '/public/html/user/user.html',
+                controllerUrl: '/public/js/controller/userCtrl.js'
                 //controller: 'MainCtrl',
                 //controllerUrl: '/public/js/view1Ctrl.js'
             }))

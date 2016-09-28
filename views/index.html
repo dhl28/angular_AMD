@@ -29,6 +29,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css"/>
 	<link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/bower_components/simple-line-icons/css/simple-line-icons.css">
+	<link rel="stylesheet" href="/bower_components/bootstrap-table/dist/bootstrap-table.css">
 	<link rel="stylesheet" href="/public/css/style.css">
 
 	<link rel="stylesheet" href="/public/css/components.css">
@@ -90,7 +91,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<div class="page-content-wrapper">
 			<div class="page-content">
 				<!-- BEGIN STYLE CUSTOMIZER(optional) -->
-				<div theme-panel class="theme-panel hidden-xs hidden-sm"></div>
+				<div theme-panel ng-class="{hidden:settings.hideThemePanel}" class="theme-panel hidden-xs hidden-sm"></div>
 				<!-- END STYLE CUSTOMIZER -->
 
 				<!-- BEGIN ACTUAL CONTENT -->
@@ -126,6 +127,8 @@ License: You must have a valid license purchased only from themeforest(the above
 	<script type="text/javascript" src="/bower_components/jquery-slimscroll/jquery.slimscroll.js"></script>
 	<script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
 	<script type="text/javascript" src="/bower_components/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+	<script type="text/javascript" src="/bower_components/bootstrap-table/dist/bootstrap-table.js"></script>
+	<script type="text/javascript" src="/bower_components/bootstrap-table/dist/locale/bootstrap-table-zh-CN.js"></script>
 	<!--&lt;!&ndash; BEGIN CORE ANGULARJS PLUGINS &ndash;&gt;-->
 	<script type="text/javascript" src="/public/js/metronic/metronic.js"></script>
 	<script type="text/javascript" src="/public/js/metronic/layout.js"></script>
