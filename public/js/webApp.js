@@ -34,14 +34,22 @@ define(['angularAMD','uiRouter','lodash',
         return settings;
     }]);
 
-    myApp.config(function ($locationProvider, $stateProvider) {
+    myApp.config(function ($locationProvider, $stateProvider,$urlRouterProvider) {
         $locationProvider.html5Mode({
             enabled: true,
             requireBase: false
         });
+        $urlRouterProvider.otherwise('/error');
         $stateProvider
             .state('home', {
+                //abstract: true,
                 url: '/',
+                template: '<ui-view/>',
+                controller: 'MainCtrl',
+                redirectTo:'home.dashboard'
+            })
+            .state('home.dashboard', {
+                url: '^/dashboard',
                 templateUrl: '/public/html/dashboard.html',
                 controller: 'MainCtrl'
             })
@@ -49,12 +57,20 @@ define(['angularAMD','uiRouter','lodash',
                 url: '^/user',
                 templateUrl: '/public/html/user/user.html',
                 controllerUrl: '/public/js/controller/userCtrl.js'
-                //controller: 'MainCtrl',
-                //controllerUrl: '/public/js/view1Ctrl.js'
             }))
 
 
     })
+    //ui-router redirect
+    myApp.run(['$rootScope', '$state', function($rootScope, $state) {
+        $rootScope.$on('$stateChangeStart', function(evt, to, params) {
+            if (to.redirectTo) {
+                evt.preventDefault();
+                $state.go(to.redirectTo, params, {location: 'replace'})
+            }
+        });
+    }])
+
     myApp.controller('MainCtrl', function ($scope,$state) {
         $scope.firstName = "John";
         $scope.lastName = "Doe";
