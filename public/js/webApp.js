@@ -41,6 +41,10 @@ define(['angularAMD','uiRouter','lodash',
         });
         $urlRouterProvider.otherwise('/error');
         $stateProvider
+            .state('home.error', {
+                url: '^/error',
+                templateUrl: '/public/html/404.html',
+            })
             .state('home', {
                 //abstract: true,
                 url: '/',
