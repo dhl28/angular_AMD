@@ -2,12 +2,15 @@
  * Created by dhl on 2016/9/22.
  */
 // Controller_Other.js
-define(['webApp'], function (webApp) {
-    var userCtrl =  function ($scope) {
+define(['webApp','../service/userService.js'], function (webApp) {
+    var userCtrl =  function ($scope,userService,apiService) {
         $scope.title = "from other";
+        $scope.isCheck = true;
         $scope.sayHello = function(){
             alert('hello world');
         }
+        userService.getUsers();
+        apiService.getUsers();
         //bootstrap-table options
         var columns = [ {
             title : '名称',
@@ -97,5 +100,7 @@ define(['webApp'], function (webApp) {
         }
 
     }
-    return userCtrl;
+    //webApp.controller('userCtrl',userCtrl)
+
+    return ["$scope",'userService','apiService', userCtrl];
 });

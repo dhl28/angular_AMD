@@ -9,6 +9,8 @@ define(['angularAMD','uiRouter','lodash',
     '/public/js/directive/themePanel.directive.js',
     '/public/js/directive/sidebar.directive.js',
     '/public/js/directive/component/bsTable.directive.js',
+    '/public/js/service/apiService.js',
+    '/public/js/filter/filter.js',
 ], function (angularAMD) {
     'use strict';
     //angular.element(document).ready(function() {
