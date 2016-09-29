@@ -13,58 +13,37 @@ define(['webApp','../service/userService.js'], function (webApp) {
         apiService.getUsers();
         //bootstrap-table options
         var columns = [ {
-            title : '名称',
-            field : 'tagName'
+            title : '用户名',
+            field : 'name'
 
         }, {
-            title : '编码',
-            field : 'tagKey'
+            title : '显示名',
+            field : 'showName'
 
         }, {
-            title : '标签类型',
-            field : 'tagType'
+            title : '邮箱',
+            field : 'email'
 
         }, {
-            title : '标签属性',
-            field : 'tagProp'
+            title : '业务管理员',
+            field : 'businessManager'
 
         }, {
-            title : '是否启用',
-            field : 'isEnabled',
-            formatter : isEnableFormatter,
+            title : '修改时间',
+            field : 'modifyTime'
         }, {
             field : 'pk',
             title : '操作',
             formatter : operationFormatter,
         } ];
 
-        // cell formatter - 是否启用
-        function isEnableFormatter(value, row, index) {
-            var html = "<div data-pk=\"" + row.pk + "\">";
-            switch (row.isEnabled) {
-                case 1:
-                    html += "<img class='pointer validEnabletooltip' data-toggle='tooltip' data-placement='right' src = '/dm/resource/img/switch-on.png' >&nbsp";
-                    break;
-                case 0:
-                    html += "<img class='pointer validEnabletooltip' data-toggle='tooltip' data-placement='right' src = '/dm/resource/img/switch-off.png' >&nbsp";
-                    break;
-                default:
-                    html += "<img class='pointer validEnabletooltip' data-toggle='tooltip' data-placement='right' src = '/dm/resource/img/switch-off.png' >&nbsp";
-                    break;
-            }
-            html += "</div>"
-            return html;
-        }
-        ;
 
         // cell formatter -操作栏
         function operationFormatter(value, row, index) {
-            var html = "<div data-pk=\"" + value + "\">"
-            html += "<span class='" + getCellClass('edit', row)
-                + "' data-toggle='tooltip' data-placement='right'>&#xe616;</span>"
-            html += "<span class='" + getCellClass('del', row)
-                + "' data-toggle='tooltip' data-placement='right'>&#xe619;</span>";
-            html += "</div>"
+            var html = '<div>'+
+                    '<a class="fa fa-edit btn-cell" title="编辑"></a>'+
+                    '<a class="fa fa-trash btn-cell" title="删除"></a>'+
+                '</div>'
             return html;
         }
         function getCellClass(oprationType, row) {
@@ -87,7 +66,21 @@ define(['webApp','../service/userService.js'], function (webApp) {
             }
         }
         //mock data
-        var data = [];
+        var data = [{
+            pk:'001',
+            name:'douhl',
+            showName:'窦洪亮',
+            email:'douhl@yonyou.com',
+            businessManager:'管理员',
+            modifyTime:'2016-09-28 11:30:00'
+        },{
+            pk:'002',
+            name:'anderson',
+            showName:'neo',
+            email:'anderson@gmail.com',
+            businessManager:'数据挖掘',
+            modifyTime:'2016-09-27 13:30:00'
+        }];
 
         $scope.bsOpts = {
             columns : columns,

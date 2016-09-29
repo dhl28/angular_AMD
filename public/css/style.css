@@ -61,3 +61,6 @@ a {
 .pointer{
   cursor: pointer;
 }
+.btn-cell{
+  margin-left: 15px;
+}
