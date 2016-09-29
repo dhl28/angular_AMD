@@ -1,96 +1,143 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.2
+Version: 3.7.0
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js" data-ng-app="MetronicApp"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js" data-ng-app="MetronicApp"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
 <head>
-    <meta charset="utf-8">
-    <title>野鹤仙云的秘密实验室</title>
-    <meta name="description" content="野鹤仙云的秘密实验室">
-    <meta name="viewport" content="width=device-width">
+<title></title>
 
-    <link rel="icon" href="/public/favicon.ico" mce_href="/public/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/public/favicon.ico" mce_href="/public/favicon.ico" type="image/x-icon">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="public/stylesheets/style.css">
-    <link rel="stylesheet" href="public/stylesheets/animation.css">
-    <!-- endbuild -->
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css"/>
+	<link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/bower_components/simple-line-icons/css/simple-line-icons.css">
+	<link rel="stylesheet" href="/bower_components/bootstrap-table/dist/bootstrap-table.css">
+	<link rel="stylesheet" href="/public/css/style.css">
+	<link rel="stylesheet" href="/public/css/error.css">
+
+	<link rel="stylesheet" href="/public/css/components.css">
+	<link rel="stylesheet" href="/public/css/plugins.css">
+	<link rel="stylesheet" href="/public/css/layout.css">
+	<link rel="stylesheet" href="/public/css/themes/darkblue.css">
+	<link rel="stylesheet" href="/public/css/custom.css">
+<!-- END GLOBAL MANDATORY STYLES -->
+
+<!-- BEGIN DYMANICLY LOADED CSS FILES(all plugin and page related styles must be loaded between GLOBAL and THEME css files ) -->
+<link id="ng_load_plugins_before"/>
+<!-- END DYMANICLY LOADED CSS FILES -->
+
+<!-- BEGIN THEME STYLES -->
+<!-- DOC: To use 'rounded corners' style just load 'components-rounded.css' stylesheet instead of 'components.css' in the below style tag -->
+<!-- END THEME STYLES -->
+
+	<link rel="icon" href="/public/favicon.ico" mce_href="/public/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/public/favicon.ico" mce_href="/public/favicon.ico" type="image/x-icon">
 </head>
-<body ng-app="myApp">
-<!--[if lte IE 8]>
-<p class="browsehappy">您正在使用 <strong>低版本</strong> 浏览器. 请 <a href="http://browsehappy.com/">升级浏览器</a> 提升用户体验.</p>
-<![endif]-->
+<!-- END HEAD -->
 
-<!-- Add your site or application content here -->
-<div class="header">
-    <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
+<!-- BEGIN BODY -->
+<!-- DOC: Apply "page-header-fixed-mobile" and "page-footer-fixed-mobile" class to body element to force fixed header or footer in mobile devices -->
+<!-- DOC: Apply "page-sidebar-closed" class to the body and "page-sidebar-menu-closed" class to the sidebar menu element to hide the sidebar by default -->
+<!-- DOC: Apply "page-sidebar-hide" class to the body to make the sidebar completely hidden on toggle -->
+<!-- DOC: Apply "page-sidebar-closed-hide-logo" class to the body element to make the logo hidden on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-hide" class to body element to completely hide the sidebar on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-fixed" class to have fixed sidebar -->
+<!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
+<!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
+<!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
+<body  class="page-header-fixed page-sidebar-closed-hide-logo page-quick-sidebar-over-content" ng-class="{'page-container-bg-solid': settings.layout.pageBodySolid, 'page-sidebar-closed': settings.layout.pageSidebarClosed}">
 
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#js-navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+	<!-- BEGIN PAGE SPINNER -->
+	<div ng-spinner-bar class="page-spinner-bar">
+		<div class="bounce1"></div>
+		<div class="bounce2"></div>
+		<div class="bounce3"></div>
+	</div>
+	<!-- END PAGE SPINNER -->
 
-                <a class="navbar-brand" href="#/">秘密实验室</a>
-            </div>
+	<!-- BEGIN HEADER -->
+	<div header class="page-header md-shadow-z-1-i navbar navbar-fixed-top"></div>
+	<!--<div data-ng-include="'tpl/header.html'" data-ng-controller="HeaderController" class="page-header md-shadow-z-1-i navbar navbar-fixed-top">-->
+	<!--</div>-->
+	<!-- END HEADER -->
 
-            <div class="collapse navbar-collapse" id="js-navbar-collapse">
+	<div class="clearfix">
+	</div>
 
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#/">主页</a></li>
-                    <li><a ng-href="#/">介绍</a></li>
-                    <li><a ng-href="#/">联系我们</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+	<!-- BEGIN CONTAINER -->
+	<div class="page-container">
+		<!-- BEGIN SIDEBAR -->
+		<div side-bar class="page-sidebar-wrapper"></div>
+		<!-- END SIDEBAR -->
 
-<div class="container-opt">
-    <!-- 菜单 -->
-    <div class="sidebar">
-        <div sider-bar></div>
-    </div>
-    <div class="mainBoard" ng-include="'/views/main.html'" ng-controller="MainCtrl"></div>
-</div>
-<div class="clearfix"></div>
-<div class="footer">
-    <div class="container">
-        <span class="glyphicon glyphicon-heart"></span><span class="copy-right">暗影军团出品</span>
-    </div>
-</div>
+		<!-- BEGIN CONTENT -->
+		<div class="page-content-wrapper">
+			<div class="page-content">
+				<!-- BEGIN STYLE CUSTOMIZER(optional) -->
+				<div theme-panel ng-class="{hidden:settings.hideThemePanel}" class="theme-panel hidden-xs hidden-sm"></div>
+				<!-- END STYLE CUSTOMIZER -->
 
-<div class="myAnimate"></div>
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-<script>
-    !function (A, n, g, u, l, a, r) {
-        A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
-                    (A[l].q = A[l].q || []).push(arguments)
-                }, A[l].l = +new Date, a = n.createElement(g),
-                r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
-    }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+				<!-- BEGIN ACTUAL CONTENT -->
+				<div data-ui-view="" class="fade-in-up">
+				</div>
+				<!-- END ACTUAL CONTENT -->
+			</div>
+		</div>
+		<!-- END CONTENT -->
 
-    ga('create', 'UA-XXXXX-X');
-    ga('send', 'pageview');
-</script>
+		<!-- BEGIN QUICK SIDEBAR -->
+		<a href="javascript:;" class="page-quick-sidebar-toggler"><i class="icon-close"></i></a>
+		<div quick-sidebar  class="page-quick-sidebar-wrapper"></div>
+		<!-- END QUICK SIDEBAR -->
+	</div>
+	<!-- END CONTAINER -->
 
-<!-- build:js(.) scripts/vendor.js -->
-<!-- bower:js -->
-<script data-main="/public/javascripts/main.js" src="bower_components/requirejs/require.js"></script>
+	<!-- BEGIN FOOTER -->
+	<div footer class="page-footer">
+	</div>
+	<!-- END FOOTER -->
 
-<!-- endbower -->
-<!-- endbuild -->
+	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 
-<!-- build:js({.tmp,app}) scripts/scripts.js -->
+	<!-- BEGIN CORE JQUERY PLUGINS -->
+	<!--[if lt IE 9]>
+	<script src="../../../assets/global/plugins/respond.min.js"></script>
+	<script src="../../../assets/global/plugins/excanvas.min.js"></script>
+	<![endif]-->
+	<script data-main="/public/js/main.js" src="/bower_components/requirejs/require.js"></script>
+	<!--&lt;!&ndash; END CORE JQUERY PLUGINS &ndash;&gt;-->
+	<script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="/bower_components/jquery-slimscroll/jquery.slimscroll.js"></script>
+	<script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script type="text/javascript" src="/bower_components/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+	<script type="text/javascript" src="/bower_components/bootstrap-table/dist/bootstrap-table.js"></script>
+	<script type="text/javascript" src="/bower_components/bootstrap-table/dist/locale/bootstrap-table-zh-CN.js"></script>
+	<!--&lt;!&ndash; BEGIN CORE ANGULARJS PLUGINS &ndash;&gt;-->
+	<script type="text/javascript" src="/public/js/metronic/metronic.js"></script>
+	<script type="text/javascript" src="/public/js/metronic/layout.js"></script>
+	<script type="text/javascript" src="/public/js/metronic/quick-sidebar.js"></script>
+	<script type="text/javascript" src="/public/js/metronic/demo.js"></script>
 
-<!-- endbuild -->
+	<!-- END CORE ANGULARJS PLUGINS -->
+
 </body>
+<!-- END BODY -->
 </html>
